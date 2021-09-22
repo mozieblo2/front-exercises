@@ -5,18 +5,22 @@ import {
     Route
 } from 'react-router-dom';
 import DragAndDropPage from '../../pages/dragAndDropPage/DragAndDropPage';
+import ArticlesPage from '../../pages/articlesPage/ArticlesPage';
 import HomePage from '../../pages/homePage/HomePage';
 import { ROUTES } from '../../router/router';
 import './App.css';
 
 function App() {
-    const { HOME, DRAG_AND_DROP } = ROUTES
+    const { HOME, DRAG_AND_DROP, REDUX } = ROUTES
     return (
         <div className="App">
             <Router>
                 <Switch>
                     <Route path={DRAG_AND_DROP}>
                         <DragAndDropPage />
+                    </Route>
+                    <Route path={REDUX}>
+                        <ArticlesPage />
                     </Route>
                     <Route path={HOME}>
                         <HomePage />
