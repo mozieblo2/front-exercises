@@ -1,4 +1,4 @@
-import { ADD_ARTICLE } from '../constants/action-types';
+import { ADD_ARTICLE, FOUND_BAD_WORD } from '../constants/action-types';
 
 const forbiddenWords = ['trash', 'rubbish'];
 
@@ -13,7 +13,7 @@ export function forbiddenWordsMiddleware({ dispatch }) {
                 );
 
                 if (foundWord.length) {
-                    return dispatch({ type: 'FOUND_BAD_WORD' });
+                    return dispatch({ type: FOUND_BAD_WORD });
                 }
             }
             return next(action);

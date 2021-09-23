@@ -17,19 +17,18 @@ type IState = {
 
 const ArticleList = ({ articles }: ArticleListProps) => {
     return (
-        <div>
+        <ul className="articleList">
             {articles.map((article: IArticleList) => {
                 return (
                     <li
                         key={`${article.id}-${Math.random()}`}
-                        className="articleList"
                     >
                         <p>{article.title}</p>
                         <p>{article.id}</p>
                     </li>
                 )
             })}
-        </div>
+        </ul>
     );
 }
 
