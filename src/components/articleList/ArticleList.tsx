@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import RemoveButton from '../removeButton/RemoveButton';
 import './ArticleList.css';
 
 interface ArticleListProps {
@@ -21,10 +22,11 @@ const ArticleList = ({ articles }: ArticleListProps) => {
             {articles.map((article: IArticleList) => {
                 return (
                     <li
-                        key={`${article.id}-${Math.random()}`}
+                        key={article.id}
+                        className="articleLi"
                     >
                         <p>{article.title}</p>
-                        <p>{article.id}</p>
+                        <RemoveButton id={article.id}/>
                     </li>
                 )
             })}

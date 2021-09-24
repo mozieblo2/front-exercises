@@ -1,4 +1,4 @@
-import { ADD_ARTICLE, DATA_LOADED } from '../constants/action-types';
+import { ADD_ARTICLE, DATA_LOADED, REMOVE_ARTICLE } from '../constants/action-types';
 
 const initialState = {
     articles: [],
@@ -6,18 +6,24 @@ const initialState = {
 }
 
 function rootReducer(state = initialState, action) {
-    if (action.type === ADD_ARTICLE) {
-        return Object.assign({}, state, {
-            articles: state.articles.concat(action.payload)
-        })
+    switch (action.type) {
+        case ADD_ARTICLE:
+            return Object.assign({}, state, {
+                articles: state.articles.concat(action.payload)
+            })
+        case DATA_LOADED:
+            return Object.assign({}, state, {
+                remoteArticles: state.remoteArticles.concat(action.payload)
+            });
+        case REMOVE_ARTICLE:
+            const removedArticles = state.articles.filter(article => article.id !== action.id);
+            return {
+                ...state,
+                articles: removedArticles
+            }
+        default:
+            return state;
     }
-
-    if (action.type === DATA_LOADED) {
-        return Object.assign({}, state, {
-            remoteArticles: state.remoteArticles.concat(action.payload)
-        });
-    }
-    return state;
 }
 
 export default rootReducer;

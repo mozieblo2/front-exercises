@@ -1,3 +1,9 @@
 .articleList {
     list-style-type: none;
 }
+
+.articleLi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

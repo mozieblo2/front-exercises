@@ -7,7 +7,8 @@ type FormProps = {
 }
 
 type IPayload = {
-    title: string
+    title: string;
+    id: number;
 }
 
 type IAction = {
@@ -36,7 +37,7 @@ class ConnectedForm extends Component<FormProps, FormState> {
     submitHandler(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
         const { title } = this.state;
-        title && this.props.addArticle({ title });
+        title && this.props.addArticle({ title, id: Math.random() });
         this.setState({ title: "" });
     }
     render() {
