@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getData } from '../../actions';
+import { getData, getData2 } from '../../actions';
 import '../articleList/ArticleList.css';
 
 type PostProps = {
     getData: () => void;
+    getData2: (payload: string) => void;
     articles: IArticleList[]
 }
 
@@ -32,6 +33,7 @@ export class Post extends Component<PostProps, PostState> {
 
     componentDidMount() {
         this.props.getData();
+        this.props.getData2('https://jsonplaceholder.typicode.com/posts');
     }
 
     render() {
@@ -53,5 +55,5 @@ function mapStateToProps(state: IState) {
 
 export default connect(
     mapStateToProps,
-    { getData }
+    { getData, getData2 }
 )(Post);

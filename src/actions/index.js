@@ -1,4 +1,4 @@
-import { ADD_ARTICLE, DATA_LOADED, REMOVE_ARTICLE } from '../constants/action-types';
+import { ADD_ARTICLE, DATA_LOADED, REMOVE_ARTICLE, DATA_REQUESTED } from '../constants/action-types';
 
 // action creator
 export function addArticle(payload) {
@@ -18,4 +18,9 @@ export function getData() {
                 dispatch({ type: DATA_LOADED, payload: json });
         });
     };
+}
+
+// redux saga
+export function getData2(url) {
+    return { type: DATA_REQUESTED, payload: { url } };
 }

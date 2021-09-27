@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components';
-import { removeArticle } from '../../actions/index'
+import { removeArticle } from '../../actions'
 
 type RemoveButtonProps = {
     id: number;
