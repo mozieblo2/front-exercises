@@ -4,7 +4,7 @@ import { ROUTES } from '../../router/router';
 import './Navigation.css';
 
 function Navigation() {
-    const { HOME, DRAG_AND_DROP, REDUX } = ROUTES
+    const { HOME, DRAG_AND_DROP, REDUX, GENERATOR } = ROUTES
     return (
         <div>
             <ul className="navigation">
@@ -16,6 +16,9 @@ function Navigation() {
                 </li>
                 <li>
                     <Link to={REDUX}>Redux</Link>
+                </li>
+                <li>
+                    <Link to={GENERATOR}>Generator Function</Link>
                 </li>
             </ul>
         </div>

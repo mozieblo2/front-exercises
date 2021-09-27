@@ -7,11 +7,12 @@ import {
 import DragAndDropPage from '../../pages/dragAndDropPage/DragAndDropPage';
 import ArticlesPage from '../../pages/articlesPage/ArticlesPage';
 import HomePage from '../../pages/homePage/HomePage';
+import GeneratorPage from '../../pages/generatorPage/GeneratorPage';
 import { ROUTES } from '../../router/router';
 import './App.css';
 
 function App() {
-    const { HOME, DRAG_AND_DROP, REDUX } = ROUTES
+    const { HOME, DRAG_AND_DROP, REDUX, GENERATOR } = ROUTES
     return (
         <div className="App">
             <Router>
@@ -21,6 +22,9 @@ function App() {
                     </Route>
                     <Route path={REDUX}>
                         <ArticlesPage />
+                    </Route>
+                    <Route path={GENERATOR}>
+                        <GeneratorPage />
                     </Route>
                     <Route path={HOME}>
                         <HomePage />

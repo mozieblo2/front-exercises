@@ -5,5 +5,6 @@ export type Routes = {
 export const ROUTES: Routes = {
     HOME: '/',
     DRAG_AND_DROP: '/drag-and-drop',
-    REDUX: '/redux'
+    REDUX: '/redux',
+    GENERATOR: '/generator-function'
 };
