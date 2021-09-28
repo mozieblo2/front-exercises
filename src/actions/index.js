@@ -1,4 +1,9 @@
 import { ADD_ARTICLE, DATA_LOADED, REMOVE_ARTICLE, DATA_REQUESTED } from '../constants/action-types';
+// import { createAction } from '@reduxjs/toolkit'
+
+// redux-toolkit
+// export const addArticleRT = createAction('addArticle');
+// export const removeArticleRT = createAction('removeArticle');
 
 // action creator
 export function addArticle(payload) {
