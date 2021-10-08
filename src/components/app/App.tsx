@@ -8,11 +8,12 @@ import DragAndDropPage from '../../pages/dragAndDropPage/DragAndDropPage';
 import ArticlesPage from '../../pages/articlesPage/ArticlesPage';
 import HomePage from '../../pages/homePage/HomePage';
 import GeneratorPage from '../../pages/generatorPage/GeneratorPage';
+import GraphqlPage from '../../pages/graphqlPage/GraphqlPage';
 import { ROUTES } from '../../router/router';
 import './App.css';
 
 function App() {
-    const { HOME, DRAG_AND_DROP, REDUX, GENERATOR } = ROUTES
+    const { HOME, DRAG_AND_DROP, REDUX, GENERATOR, GRAPHQL } = ROUTES
     return (
         <div className="App">
             <Router>
@@ -25,6 +26,9 @@ function App() {
                     </Route>
                     <Route path={GENERATOR}>
                         <GeneratorPage />
+                    </Route>
+                    <Route path={GRAPHQL}>
+                        <GraphqlPage />
                     </Route>
                     <Route path={HOME}>
                         <HomePage />
